@@ -10,17 +10,20 @@ public class bullet_behavior : MonoBehaviour
     public float speed;
 	private Vector3 bul_dir;
 	private Vector3 endPoint;
-
+    private static System.Random rnd = new System.Random();
 
     void Start()
     {
 		bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
 		GetComponent<Rigidbody>().AddForce(bul_dir * speed);
 
-		System.Random rnd = new System.Random ();
-		endPoint = GameObject.Find ("PlayerHitbox").transform.position;
-		endPoint.x += rnd.Next(-25, 25);
-		endPoint.y += rnd.Next(-25, 25);
+        int halfHitboxWidth = (int) (GameObject.Find("PlayerHitbox").transform.lossyScale.x / 2);
+        int halfHitboxHeight = (int) (GameObject.Find("PlayerHitbox").transform.lossyScale.y / 2);
+
+        //Determine where the bullet is going to be moving towards
+        endPoint = GameObject.Find ("PlayerHitbox").transform.position;
+		endPoint.x += rnd.Next(-halfHitboxWidth, halfHitboxWidth);
+		endPoint.y += rnd.Next(-halfHitboxHeight, halfHitboxHeight);
 		Debug.Log (endPoint, gameObject);
 
 		//bul_dir = bul_dir * new System.Random ().Next(-24,24);

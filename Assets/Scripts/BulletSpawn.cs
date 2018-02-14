@@ -8,9 +8,10 @@ public class BulletSpawn : MonoBehaviour {
 	public float lives;
 	public float spawnTime;
 	public GameObject bullet;
+    private static System.Random rnd = new System.Random();
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		InvokeRepeating ("Spawn", spawnTime, spawnTime);
 
 	}
@@ -25,8 +26,6 @@ public class BulletSpawn : MonoBehaviour {
 		if (lives <= 0)
 			return;
 
-		System.Random rnd = new System.Random ();
-
-		Instantiate (bullet, new Vector3 (rnd.Next (-24, 24), rnd.Next (-24, 24), 25), Quaternion.identity);
+        Instantiate (bullet, new Vector3 (rnd.Next (-24, 24), rnd.Next (-24, 24), 25), Quaternion.identity);
 	}
 }
