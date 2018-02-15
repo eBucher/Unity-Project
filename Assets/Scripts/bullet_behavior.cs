@@ -11,7 +11,7 @@ public class bullet_behavior : MonoBehaviour
 	private Vector3 bul_dir;
 	private Vector3 endPoint;
     private static System.Random rnd = new System.Random();
-
+	
     void Start()
     {
 		bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
@@ -24,14 +24,9 @@ public class bullet_behavior : MonoBehaviour
         endPoint = GameObject.Find ("PlayerHitbox").transform.position;
 		endPoint.x += rnd.Next(-halfHitboxWidth, halfHitboxWidth);
 		endPoint.y += rnd.Next(-halfHitboxHeight, halfHitboxHeight);
+		endPoint.z -= 5;
 		Debug.Log (endPoint, gameObject);
 
-		//bul_dir = bul_dir * new System.Random ().Next(-24,24);
-		//bul_dir = bul_dir * -1;
-        //GetComponent<Rigidbody>().velocity = transform.forward * speed * -1;
-		//bul_dir = GameObject.Find ("lightsaber").transform.position - transform.position;
-			
-		//GetComponent<Rigidbody>().AddForce(bul_dir * speed);
     }
 
     // Update is called once per frame
@@ -41,4 +36,15 @@ public class bullet_behavior : MonoBehaviour
 
 		transform.position = Vector3.MoveTowards(transform.position, endPoint, step );
     }
+	
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.CompareTag ("PlayerHitbox")) {
+			//Debug.Log ("Collision");
+			Destroy (this.gameObject);
+		}
+		if(other.gameObject.CompareTag ("Lightsaber")) {
+			//Debug.Log ("Hit the lightsaber");
+			Destroy (this.gameObject);
+	}
+}
 }
