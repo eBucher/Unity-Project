@@ -13,7 +13,7 @@ public class score_mngr : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		score_num = 0;
-		num_lives = 3;
+		num_lives = 10;
 
 		SetLivesText ();
 		SetScoreText ();
