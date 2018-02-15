@@ -40,10 +40,12 @@ public class bullet_behavior : MonoBehaviour
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("PlayerHitbox")) {
 			//Debug.Log ("Collision");
+			GameObject.Find("Score Manager").GetComponent<score_mngr>().decrease_lives();
 			Destroy (this.gameObject);
 		}
 		if(other.gameObject.CompareTag ("Lightsaber")) {
 			//Debug.Log ("Hit the lightsaber");
+			GameObject.Find("Score Manager").GetComponent<score_mngr>().increase_score();
 			Destroy (this.gameObject);
 	}
 }
