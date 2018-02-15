@@ -11,7 +11,7 @@ public class bullet_behavior : MonoBehaviour
 	private Vector3 bul_dir;
 	private Vector3 endPoint;
     private static System.Random rnd = new System.Random();
-	
+
     void Start()
     {
 		bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
@@ -26,7 +26,7 @@ public class bullet_behavior : MonoBehaviour
 		endPoint.y += rnd.Next(-halfHitboxHeight, halfHitboxHeight);
 		endPoint.z -= 5;
 		Debug.Log (endPoint, gameObject);
-
+        transform.LookAt(endPoint);
     }
 
     // Update is called once per frame
