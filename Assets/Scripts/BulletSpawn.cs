@@ -2,23 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 public class BulletSpawn : MonoBehaviour {
 	//public float lives;
 	public float spawnTime;
 	public GameObject bullet;
+    public Text startMessage;
     private static System.Random rnd = new System.Random();
+    private bool startGame = false;
 
     // Use this for initialization
     void Start () {
-		InvokeRepeating ("Spawn", spawnTime, spawnTime);
+		
 
 	}
 	
-	// Update is called once per frame
+	// When the space bar is pressed, the game will begin.
 	void Update () {
-		
+        if (Input.GetKeyDown("space"))
+        {
+            startGame = true;
+        }
+        if (startGame)
+        {
+            InvokeRepeating("Spawn", spawnTime, spawnTime);
+            startMessage.text = "";
+            startGame = false;
+        }
 	}
 		
 	void Spawn ()
