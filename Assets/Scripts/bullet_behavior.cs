@@ -16,7 +16,7 @@ public class bullet_behavior : MonoBehaviour
     void Start()
     {
         long score = GameObject.Find("Score Manager").GetComponent<score_mngr>().getScore();
-        speed = speed + (score / 2);
+        speed = speed + (score / 5);
 
         bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
 		GetComponent<Rigidbody>().AddForce(bul_dir * speed);
