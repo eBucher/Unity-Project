@@ -287,6 +287,7 @@
     <Compile Include="Assets\Scripts\bullet_behavior.cs" />
     <Compile Include="Assets\Scripts\BulletSpawn.cs" />
     <Compile Include="Assets\Scripts\ExtDataDemo.cs" />
+    <Compile Include="Assets\Scripts\portal_behavior.cs" />
     <Compile Include="Assets\Scripts\score_mngr.cs" />
     <Compile Include="Assets\Scripts\WiimoteDemo.cs" />
     <Compile Include="Assets\Wiimote\Scripts\Enums.cs" />

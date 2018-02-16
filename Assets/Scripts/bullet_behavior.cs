@@ -11,6 +11,7 @@ public class bullet_behavior : MonoBehaviour
 	private Vector3 bul_dir;
 	private Vector3 endPoint;
     private static System.Random rnd = new System.Random();
+    public GameObject explosion;
 
     void Start()
     {
@@ -42,11 +43,15 @@ public class bullet_behavior : MonoBehaviour
 			//Debug.Log ("Collision");
 			GameObject.Find("Score Manager").GetComponent<score_mngr>().decrease_lives();
 			Destroy (this.gameObject);
+
 		}
 		if(other.gameObject.CompareTag ("Lightsaber")) {
 			//Debug.Log ("Hit the lightsaber");
 			GameObject.Find("Score Manager").GetComponent<score_mngr>().increase_score();
 			Destroy (this.gameObject);
-	}
+            
+            //Create an explosion when the lightsaber is hit
+            Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+        }
 }
 }
