@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 2
   bullet: {fileID: 1354132867794586, guid: 9a745d643eec50e49863d56b89b326e4, type: 2}
-  startMessage: {fileID: 1965837071}
+  topMessage: {fileID: 1965837071}
 --- !u!4 &51812979
 Transform:
   m_ObjectHideFlags: 0
@@ -2139,6 +2139,7 @@ MonoBehaviour:
   score_num: 0
   lives: {fileID: 404715907}
   score: {fileID: 1886777412}
+  topMessage: {fileID: 1965837071}
   hit: {fileID: 294240148}
 --- !u!4 &1885476864
 Transform:
@@ -5803,7 +5804,7 @@ GameObject:
   - component: {fileID: 1965837072}
   - component: {fileID: 1965837071}
   m_Layer: 5
-  m_Name: Press Space
+  m_Name: Top Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5824,7 +5825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 271.46857, y: 209}
+  m_AnchoredPosition: {x: 162.10364, y: 209}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1965837071
@@ -5853,7 +5854,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 64
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

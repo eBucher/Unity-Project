@@ -8,6 +8,7 @@ public class score_mngr : MonoBehaviour {
 	public long score_num;
 	public Text lives;
 	public Text score;
+    public Text topMessage;
 	public AudioSource hit;
 
 	// Use this for initialization
@@ -34,6 +35,10 @@ public class score_mngr : MonoBehaviour {
 		//Debug.Log ("In decrease lives.");
 		num_lives--;
 		SetLivesText ();
+        if (num_lives == 0)
+        {
+            topMessage.text = "Game Over";
+        }
 	}
 
 	public int getLives() {

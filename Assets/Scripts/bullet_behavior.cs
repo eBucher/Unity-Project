@@ -15,7 +15,10 @@ public class bullet_behavior : MonoBehaviour
 
     void Start()
     {
-		bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
+        long score = GameObject.Find("Score Manager").GetComponent<score_mngr>().getScore();
+        speed = speed + (score / 2);
+
+        bul_dir = GameObject.Find ("PlayerHitbox").transform.position - transform.position;
 		GetComponent<Rigidbody>().AddForce(bul_dir * speed);
 
         int halfHitboxWidth = (int) (GameObject.Find("PlayerHitbox").transform.lossyScale.x / 2);

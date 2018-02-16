@@ -9,7 +9,7 @@ public class BulletSpawn : MonoBehaviour {
 	//public float lives;
 	public float spawnTime;
 	public GameObject bullet;
-    public Text startMessage;
+    public Text topMessage;
     private static System.Random rnd = new System.Random();
     private bool startGame = false;
 
@@ -28,7 +28,7 @@ public class BulletSpawn : MonoBehaviour {
         if (startGame)
         {
             InvokeRepeating("Spawn", spawnTime, spawnTime);
-            startMessage.text = "";
+            topMessage.text = "";
             startGame = false;
         }
 	}
