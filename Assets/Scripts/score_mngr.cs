@@ -26,6 +26,7 @@ public class score_mngr : MonoBehaviour {
 	}
 
 	public void increase_score() {
+        Debug.Log("Updating score to " + score_num.ToString());
 		score_num++;
 		hit.Play ();
 		SetScoreText ();

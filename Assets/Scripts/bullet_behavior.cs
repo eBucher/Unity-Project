@@ -43,10 +43,10 @@ public class bullet_behavior : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag ("PlayerHitbox")) {
-			//Debug.Log ("Collision");
+			//Update the score, destroy the bullet, and flash red on the screen
 			GameObject.Find("Score Manager").GetComponent<score_mngr>().decrease_lives();
 			Destroy (this.gameObject);
-
+            GameObject.Find("Hit Overlay").GetComponent<hit_overlay_behavior>().FadeAnimation();
 		}
 		if(other.gameObject.CompareTag ("Lightsaber")) {
 			//Debug.Log ("Hit the lightsaber");
