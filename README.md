@@ -1,49 +1,44 @@
-C# / Unity Wii Remote API
-=========================
+<center><img src="https://4vector.com/i/free-vector-wii-remote-clip-art_116442_Wii_Remote_clip_art_hight.png" height="200px" /></center>
 
-This is an easy to use interface between Unity3D (or C# in general with minimal changes) and a Wii Remote controller.
-The library uses a slightly modified version of [Signal11's HIDAPI](https://github.com/signal11/hidapi) to handle
-low-level bluetooth communications.  In essence, the API itself is an implementation of the excellent
-reverse-engineering effort done at [Wiibrew](http://wiibrew.org/wiki/Wiimote).  Here are some notable features of the
-API:
+# Unity Wii Remote Lightsaber Simulation
 
-- **Cross Platform**: The API is compatible with Windows (on the Microsoft and BlueSoleil bluetooth stacks), Mac, and
-  Linux (only tested on Windows and Mac).
-- **Fully Featured**: The API is capable of communicating and interpreting almost all useful data from the Wii Remote,
-  including:
-    - Basic Button Data (A, B, +, -, 1, 2, D-Pad, Home buttons)
-    - 3-Axis Accelerometer reporting
-    - IR Camera Data (including pointing position)
-    - Extension Controller Support:
-        - *Nunchuck*: Joystick data, C and Z buttons, Accelerometer data
-        - *Classic Controller*: All Buttons (including analog buttons) and Joysticks
-        - *Wii Motion Plus*: Change in Pitch / Yaw / Roll.
-        - *Wii U Pro Controller*: All Buttons and Joysticks - The Wii U Pro Controller acts as a Wii Remote with a custom extension controller, so it is compatible with this API.
-        - *Guitar Hero Guitar Controller*: All buttons, both strum directions, whammy, slider (touchbar), and analog stick
-        - More extension controllers coming soon!  Raw data also available for custom extension controllers.
-    - Controlling the remote's 4 LEDs
-    - Status reporting (battery level, player LED state, etc.)
-    - More features coming soon!
-- **Fully Documented**: The API comes with an example scene in Unity3D that makes use of all of the API's functions.  The
-  API itself is well commented and comes with [Doxygen](http://www.stack.nl/~dimitri/doxygen/) documentation.
-- **Open and Growing**: The API is licensed under the generous MIT license (see LICENSE.txt) so you can easily use it
-  in your projects.  Source code access lets you debug easer.  Of course, it's also free!
+This project is a demonstration of using a Nintendo Wii remote connected via bluetooth to a computer to interact with a game written in Unity. In the game, the user must use the remote to control a lightsaber and deflect bullets that are coming out of a portal. As the game progresses, the bullets are shot faster and become harder to block. If the user is hit three times, the game is over. 
 
-Installation
-------------
 
-The latest release can be found [here](http://www.github.com/Flafla2/Unity-Wiimote/releases)
+## Hardware Needed
+* A laptop or desktop with bluetooth enabled
+* A Nintendo Wii remote
+* [A Wii MotionPlus Accessory](https://en.wikipedia.org/wiki/Wii_MotionPlus)
+  * Alternatively, a Wii Remote MotionPlus may be used.
 
-To install, open Unity-Wiimote.unitypackage or go to Assets->Import Package->Custom Package... in the Unity Editor and locate Unity-Wiimote.unitypackage.
+For this program, a Wii Sensor Bar is not needed. The MotionPlus provides an accelerometer and gyroscopic sensors which provide enough data to be able to control the lightsaber.
 
-Future Changes
---------------
+## Setup
 
-While the API is very powerful already, I would still like to make changes to it to improve it even more.  Namely I would
-like to:
+### Downloading
+1. Download or fork the code from this repository. The Unity_Project folder can be saved anywhere.
+2. Open [Unity 3D](https://unity3d.com/) and press the "Open" button. We developed this game using version 2017.3.0 of Unity, although the project can be opened in other versions as well. If you try to open the project in a different version of Unity, you may be prompted that, "Your project was last opened with a different setup of Unity." This warning can be ignored.
+3. If the game is not opened automatically in the editor, go to File > Open Scene and then find the Scene.unity file in the assets folder.
 
-- Add support for all common extension controllers (Classic Controller Pro, etc.)
-    - Add support for Nunchuck passthrough / Classic Controller passthrough mode on the Wii Motion Plus
-- Add speaker support (no small feat!)
 
-If you would like to help implement any of these changes, feel free to submit a pull request!
+
+### Wii Remote Connection
+* For connecting a remote to a computer running Windows 10, [click here for instructions](https://answers.microsoft.com/en-us/windows/forum/windows_10-hardware/cant-connect-wii-motion-plus-remote-on-windows-10/c430affc-39cd-4f17-a1e4-3fd8d613f500?auth=1).
+* For connecting a remote to a computer running Mac OS, [click here for instructions](https://github.com/Flafla2/Unity-Wiimote/issues/3).
+1. When the game is running, click the **Find Wiimote button** in the menu on the left side of the screen. If the device was connected correctly to the computer, more options will now appear in the menu.
+2. Under the **LED Test section**, select any number. This should change which light is turned on at the bottom of the remote.
+3. Set the Wii remote down pointing towards the screen on a flat surface. Press the **Ext21** button under **Set Report** section of the menu.
+4. In the **IR Setup Sequence** section, select **Basic**.
+5. Press the **Request Identify WMP** button. If the remote is connected, the **WMP Active** section will be changed to True.
+6. Press **Activate WMP**.
+
+The remote is now set up and the game can be started by pressing the space bar. If the remote is slowly drifting on the screen, press the **Zero out WMP** button while the remote is still laying down. This acts as a calibration.
+
+## Authors
+
+* JT Palmer
+* Erich Bucher
+* Julie Rosen
+
+### Additional Credit
+ * FlaFla2 for the development of the [C# / Unity Wii Remote API](https://github.com/Flafla2/Unity-Wiimote).
