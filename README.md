@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://react.semantic-ui.com">
     <img height="150px" src="https://4vector.com/i/free-vector-wii-remote-clip-art_116442_Wii_Remote_clip_art_hight.png">
-  </a>
 </p>
 
 <h1 align="center">
