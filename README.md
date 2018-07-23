@@ -1,6 +1,12 @@
-<center><img src="https://4vector.com/i/free-vector-wii-remote-clip-art_116442_Wii_Remote_clip_art_hight.png" height="200px" /></center>
+<p align="center">
+  <a href="https://react.semantic-ui.com">
+    <img height="150px" src="https://4vector.com/i/free-vector-wii-remote-clip-art_116442_Wii_Remote_clip_art_hight.png">
+  </a>
+</p>
 
-# Unity Wii Remote Lightsaber Simulation
+<h1 align="center">
+  Unity Wii Remote Lightsaber Simulation
+</h1>
 
 This project is a demonstration of using a Nintendo Wii remote connected via bluetooth to a computer to interact with a game written in Unity. In the game, the user must use the remote to control a lightsaber and deflect bullets that are coming out of a portal. As the game progresses, the bullets are shot faster and become harder to block. If the user is hit three times, the game is over. 
 
